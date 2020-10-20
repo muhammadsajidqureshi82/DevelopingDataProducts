@@ -1,0 +1,47 @@
+---
+title: "InteractiveMapLeaflet"
+author: "Muhammad Sajid Qureshi"
+date: "17 October, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+```{r}
+
+#install.packages('leaflet')   # Installing the Leaflet package
+
+library(leaflet)            # Loading the Leaflet package
+
+
+IIUI_Icon <- makeIcon(
+  iconUrl = "http://leafletjs.com/examples/custom-icons/leaf-green.png",
+  iconWidth = 38, iconHeight = 95,
+  iconAnchorX = 22, iconAnchorY = 94,
+
+)
+
+
+LocationsCoord <- data.frame(
+                              lat = 33.6566159,
+                              lng = 72.9210543
+                            )
+
+
+LocationsCoord %>% leaflet() %>%
+  addTiles() %>%
+  addMarkers(
+      lat = LocationsCoord$lat, 
+      lng = LocationsCoord$lng,
+      icon= IIUI_Icon,
+      popup = "IIUI Islamabad, Pak."
+    )
+
+LocationsCoord 
+
+
+```
