@@ -1,0 +1,66 @@
+---
+title: "Data Plotting in R-Markdown"
+author: "Muhammad Sajid Qureshi"
+date: "20 October, 2020"
+output: ioslides_presentation
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Solution: Assignment 3 
+
+<h2> Module: 3  </h2>
+<h3> Course: "Developing Data Products" </h3> 
+
+## Presentation Contents
+
+- **Contents**
+  - *Data Sample*
+  - *Data Summary*  
+  - *Data Plot*
+
+## Data Sample
+```{r, echo=TRUE, comment = " ", eval=TRUE}
+
+      head(cars)
+
+```
+
+
+## Data Summary
+
+```{r cars, comment = " ", eval=TRUE}
+    
+    # install.package("plotly") 
+
+      summary(cars)
+
+```
+
+## Data Plot 
+<h3> Speed Vs Distance Covered </h3> 
+
+
+```{r comment = " ", echo=FALSE, fig.align='center', fig.cap="speed Vs dist"}
+
+    library(plotly)
+    
+```
+
+
+## Data Plot 
+```{r comment = " ", echo=FALSE}
+    plot_ly(data = cars, 
+            x = ~speed, 
+            y = ~dist, 
+            type="scatter",
+            mode = "markers"
+           )
+```
+
+## Thanks
+<h3> End of the Solution  </h3>
